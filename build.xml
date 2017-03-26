@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="interview-coding-question" basedir="." default="help">
+
+    <target name="compile">
+        <mkdir dir="build/classes" />
+        <javac destdir="build/classes" srcdir="src" debug="true" deprecation="on"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="test" depends="compile" >
+        <java classname="ReplayPreventionSimpleTest" classpath="build/classes"/>
+    </target>
+
+    <target name="help">
+        <echo message="Available Targets: "/>
+        <echo message="    compile: builds java classes from the src directory to the build/classes directory"/>
+        <echo message="    clean: deletes the build directory"/>
+        <echo message="    test: runs a simplistic test of the TokenReplayPrevention class"/>
+    </target>
+
+</project>
